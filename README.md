@@ -1,7 +1,7 @@
 # 算法基础的学习
 学习一些简单的算法，在此记录一些常用算法的模板
 ## 基础算法
-* 排序 [https://github.com/gueFDF/algorithm/tree/master/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95]
+* [排序] (https://github.com/gueFDF/algorithm/tree/master/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95)
 * 二分
 * 高精度
 * 前缀与差分
