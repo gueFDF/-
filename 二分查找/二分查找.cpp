@@ -1,39 +1,45 @@
 #include<iostream>
 using namespace std;
-int binary_search1(int*arr,int find)
-{
-    int l=0,r=18;
-    while(l<r)
-    {
-        int mid=(l+r)>>1;
-        if(arr[mid]==find)
-        return mid;
-        if(arr[mid]>=find) 
-        r=mid;
-        else
-        l=mid+1;
-    }
-    return l;
-}
-int binary_search2(int*arr,int find)
-{
-    int l=0,r=18;
-    while(l<r)
-    {
-        int mid=(l+r)>>1;
-        if(arr[mid]==find)
-        return mid;
-        if(arr[mid]<=find) 
-        l=mid;
-        else
-        r=mid-1;
-    }
-    return l;
-}
+const int N=500050;
+int arr[N]; 
 int main()
 {
-     int arr[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
-     cout<<binary_search1(arr,18)<<endl;
-     cout<<binary_search2(arr,18)<<endl;
+    int n,m;
+    cin>>n>>m;
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    while(m--)
+    {
+        int k=0;
+        cin>>k;
+        int mid;
+        int l=0,r=n-1;
+        while(l<r)
+        {
+            mid=(l+r)>>1;
+            if(arr[mid]>=k)
+            r=mid;
+            else
+            l=mid+1;
+        }
+        if(arr[l]!=k)
+        cout<<"-1 -1"<<endl;
+        else
+        {
+            cout<<l<<" ";
+            l=0,r=n-1,mid=0;
+            while(l<r)
+            {
+                mid=(l+r+1)>>1;
+                if(arr[mid]<=k)
+                l=mid;
+                else
+                r=mid-1;
+            }
+            cout<<r<<endl;
+        }
+    }
     return 0;
 }
